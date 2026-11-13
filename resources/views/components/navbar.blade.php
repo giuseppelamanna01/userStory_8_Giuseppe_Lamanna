@@ -8,18 +8,18 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a>
+                    <a class="nav-link" aria-current="page" href="{{ route('home') }}">{{ __('ui.home') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ route('article.index') }}">Tutti gli articoli</a>
+                    <a class="nav-link" aria-current="page" href="{{ route('article.index') }}">{{ __('ui.allArticles') }}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Categorie
+                        {{ __('ui.categories') }}
                     </a>
                     <ul class="dropdown-menu">
                         @foreach ($categories as $category)
-                            <li><a class="dropdown-item" href="{{route('byCategory', ['category'=>$category])}}">{{ $category->name }}</a></li>
+                            <li><a class="dropdown-item" href="{{route('byCategory', ['category'=>$category])}}">{{ __('categories.' . $category->name) }}</a></li>
                             @if (!$loop->last)
                                 <hr class="dropdown-divider">
                             @endif
@@ -31,10 +31,10 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Ciao, {{ Auth::user()->name }}
+                            {{ __('ui.hello') }}, {{ Auth::user()->name }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('create.article') }}">Crea</a></li>
+                            <li><a class="dropdown-item" href="{{ route('create.article') }}">{{ __('ui.createArticle') }}</a></li>
                             <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
                             <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">
                                 @csrf
@@ -43,7 +43,7 @@
                                 @if (Auth::user()->is_revisor)
                                     <li class="nav-item">
                                         <a class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25"
-                                            href="{{ route('revisor.index') }}">Zona revisore
+                                            href="{{ route('revisor.index') }}">{{ __('ui.revisorZone') }}
                                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{\App\Models\Article::toBeRevisedCount()}}</span>
                                         </a>
                                     </li>
@@ -62,14 +62,14 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Ciao, utente!
+                            {{ __('ui.hello') }}, {{ __('ui.user') }}!
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
+                            <li><a class="dropdown-item" href="{{ route('login') }}">{{ __('ui.login') }}</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
+                            <li><a class="dropdown-item" href="{{ route('register') }}">{{ __('ui.register') }}</a></li>
                         </ul>
                     </li>
                 @endauth
@@ -79,7 +79,7 @@
                     <input type="search" name="query" class="form-control" placeholder="Search" aria-label="search">
                     <button type="submit" class="input-group-text btn btn-outline-success"
                         id="basic-addon2">
-                        Search
+                        {{ __('ui.search') }}
                     </button>
                 </div>
             </form>
