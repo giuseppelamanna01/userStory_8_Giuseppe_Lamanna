@@ -57,10 +57,10 @@ class CreateArticleForm extends Component
             // dispatch(new ResizeImage($newImage->path, 300, 300));
             // dispatch(new GoogleVisionSafeSearch($newImage->id));
             // dispatch(new GoogleVisionLabelImage($newImage->id));
-            RemoveFaces::withChain([
-                new ResizeImage($newImage->path, 300, 300),
-                new GoogleVisionSafeSearch($newImage->id),
+            GoogleVisionSafeSearch::withChain([
                 new GoogleVisionLabelImage($newImage->id),
+                new RemoveFaces($newImage->id),
+                new ResizeImage($newImage->path, 300, 300),
             ])->dispatch($newImage->id);
         }
         File::deleteDirectory(storage_path('/app/livewire-tmp'));
