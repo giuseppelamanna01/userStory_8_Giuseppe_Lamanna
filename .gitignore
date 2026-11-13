@@ -6,7 +6,6 @@
 .phpactor.json
 .phpunit.result.cache
 /.codex
-/.google_credential_ottobre2026.json
 /.cursor/
 /.idea
 /.nova
@@ -27,3 +26,5 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+/google_credential_ottobre2026.json
