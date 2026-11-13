@@ -1,8 +1,15 @@
 <?php
 return [
     'hello' => 'Hello',
+    'name' => 'Name',
+    'confirm' => 'Confirm password',
     'user' => 'user',
+    'title' => 'Title',
+    'description' => 'Description',
+    'price' => 'Price',
     'home' => 'Home',
+    'email' => 'Email address',
+    'password' => 'Password',
     'allArticles' => 'All articles',
     'categories' => 'Categories',
     'search' => 'Search',
@@ -16,5 +23,8 @@ return [
     'becomeRevisor' => 'Do you want to become a revisor?',
     'becomeRevisorBtn' => 'Become revisor',
     'click' => 'By clicking the button below you will make a request to our admin',
-    'rights' => 'All rights reserved'
+    'rights' => 'All rights reserved',
+    'articleCreated' => 'Article created successfully!',
+    'publishArticle' => 'Publish an article',
+    'noArticles' => 'No articles yet',
 ];

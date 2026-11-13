@@ -10,26 +10,26 @@
 
             <form wire:submit.prevent="store">
                 <div class="mb-3">
-                    <label>Titolo</label>
+                    <label>{{ __('ui.title') }}</label>
                     <input type="text" wire:model.blur="title" class="form-control">
                     @error('title') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
                 <div class="mb-3">
-                    <label>Descrizione</label>
+                    <label>{{ __('ui.description') }}</label>
                     <textarea wire:model.blur="description" class="form-control"></textarea>
                     @error('description') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
                 <div class="mb-3">
-                    <label>Prezzo</label>
+                    <label>{{ __('ui.price') }}</label>
                     <input type="number" step="0.01" wire:model.blur="price" class="form-control">
                     @error('price') <small class="text-danger">{{ $message }}</small> @enderror
                 </div>
                 <div class="mb-3">
-                    <label>Categoria</label>
+                    <label>{{ __('ui.categories') }}</label>
                     <select wire:model.blur="category" class="form-control">
-                        <option value="">Seleziona una categoria</option>
+                        <option value="">{{ __('ui.searchPlaceholder') }}</option>
                         @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            <option value="{{ $category->id }}">{{ __('categories.' . $category->name) }}</option>
                         @endforeach
                     </select>
                     @error('category') <small class="text-danger">{{ $message }}</small> @enderror
@@ -67,7 +67,7 @@
                         </div>
                     @endif
 
-                <button type="submit" class="btn btn-dark">Crea</button>
+                <button type="submit" class="btn btn-dark">{{ __('ui.createArticle') }}</button>
             </form>
 
         </div>

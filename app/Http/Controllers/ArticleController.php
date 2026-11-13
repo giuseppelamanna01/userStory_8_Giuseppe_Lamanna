@@ -31,8 +31,8 @@ class ArticleController extends Controller implements HasMiddleware
             'category_id' => $request->category,
             'user_id' => Auth::id()
         ]);
-
-        return redirect()->back()->with('success', 'Articolo creato correttamente');
+            session()->flash('success', __('ui.articleCreated'));
+            return redirect()->route('home');
     }
 
     public static function middleware(): array

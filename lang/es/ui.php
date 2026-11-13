@@ -1,8 +1,15 @@
 <?php
 return [
     'hello' => 'Hola',
+    'name' => 'Nombre',
+    'confirm' => 'Confirmar Contraseña',
+    'title' => 'título',
+    'description' => 'descripción',
+    'price' => 'precio',
     'user' => 'usuario',
     'home' => 'Inicio',
+    'email' => 'Dirección de correo electrónico',
+    'password' => 'Contraseña',
     'allArticles' => 'Todos los artículos',
     'categories' => 'Categorías',
     'search' => 'Buscar',
@@ -16,5 +23,8 @@ return [
     'becomeRevisor' => '¿Quieres convertirte en auditor??',
     'becomeRevisorBtn' => 'Conviértete en crítico',
     'click' => 'Al hacer clic en el botón de abajo, realizará una solicitud a nuestro administrador',
-    'rights' => 'Reservados todos los derechos'
+    'rights' => 'Reservados todos los derechos',
+    'articleCreated' => '¡Artículo creado con éxito!',
+    'publishArticle' => 'Publicar un artículo',
+    'noArticles' => 'Aún no se han creado artículos',
 ];

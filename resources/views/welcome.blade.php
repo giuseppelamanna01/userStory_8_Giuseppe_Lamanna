@@ -12,10 +12,10 @@
     <div class="container-fluid text-center">
         <div class="row vh-100 justify-content-center align-items-center">
             <div class="col-12">
-                <h1 class="display-1">UserStory8</h1>
+                <h1 class="display-1">UserStory</h1>
                 <div class="my-3">
                     @auth
-                        <a class="btn btn-dark" href="{{ route('create.article') }}">Pubblica un articolo</a>
+                        <a class="btn btn-dark" href="{{ route('create.article') }}">{{ __('ui.publishArticle') }}</a>
                     @endauth
                 </div>
             </div>
@@ -28,7 +28,7 @@
             @empty
                 <div class="col-12">
                     <h3 class="text-center">
-                        Non sono ancora stati creati articoli
+                        {{ __('ui.noArticles') }}
                     </h3>
                 </div>
             @endforelse
