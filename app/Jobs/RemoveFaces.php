@@ -45,7 +45,7 @@ class RemoveFaces implements ShouldQueue
         $src = Storage::disk('public')->path($i->path);
         $image = file_get_contents($src);
 
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('../google_credential_ottobre2026.json'));
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('/google_credential_ottobre2026.json'));
 
         $googleVisionClient = new ImageAnnotatorClient();
         $googleImage = new GoogleImage();
